@@ -1,18 +1,25 @@
 package com.example.navigation.feature2.navigation
 
-import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
-import com.example.navigation.feature2.RegisterScreen
-import com.example.navigation.navigation.Screens
-import com.example.navigation.navigation.navigateToHomeScreen
-import com.example.navigation.navigation.navigateToMenuScreen
+import androidx.navigation.navigation
+import com.example.navigation.feature2.CourseScreen
+import com.example.navigation.feature2.CoursesScreen
+import com.example.navigation.navigation.navigateSingleTopTo
 
-fun NavGraphBuilder.registerSecondFeature(navController: NavController) {
-    composable(route = Screens.Register.route) {
-        RegisterScreen(
-            navigateToHomeButtonClick = { navController.navigateToHomeScreen() },
-            navigateToMenuButtonClick = { navController.navigateToMenuScreen() }
-        )
+fun NavGraphBuilder.registerSecondFeature(navController: NavHostController) {
+    navigation(
+        route = SecondFeatureScreens.SECOND_FEATURE_ROUTE,
+        startDestination = SecondFeatureScreens.Courses.route
+    ) {
+        composable(route = SecondFeatureScreens.Course.route) {
+            CourseScreen()
+        }
+        composable(route = SecondFeatureScreens.Courses.route) {
+            CoursesScreen {
+                navController.navigateSingleTopTo(SecondFeatureScreens.Course.route)
+            }
+        }
     }
 }

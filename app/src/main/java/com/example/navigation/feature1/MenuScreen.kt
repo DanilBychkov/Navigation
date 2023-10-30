@@ -8,7 +8,8 @@ import androidx.compose.runtime.Composable
 @Composable
 fun MenuScreen(
     navigateToHomeButtonClick: () -> Unit,
-    navigateToRegisterButtonClick: () -> Unit
+    navigateToRegisterButtonClick: () -> Unit,
+    navigateToMenuButtonClick: () -> Unit
 ) {
     Column {
         Text("Hello from Menu feature")
@@ -17,6 +18,9 @@ fun MenuScreen(
         }
         Button(onClick = { navigateToRegisterButtonClick.invoke() }) {
             Text(text = "Navigate to Register feature")
+        }
+        Button(onClick = { navigateToMenuButtonClick.invoke() }) {
+            Text(text = "Navigate to This screen")
         }
     }
 }

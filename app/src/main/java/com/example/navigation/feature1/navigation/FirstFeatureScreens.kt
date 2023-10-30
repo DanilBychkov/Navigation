@@ -1,12 +1,12 @@
-package com.example.navigation.navigation
+package com.example.navigation.feature1.navigation
 
-sealed class Screens(val route: String) {
+sealed class FirstFeatureScreens(val route: String) {
 
-    object Home : Screens(HOME_ROUTE)
+    object Home : FirstFeatureScreens(HOME_ROUTE)
 
-    object Menu : Screens(MENU_ROUTE)
+    object Menu : FirstFeatureScreens(MENU_ROUTE)
 
-    object Register : Screens(REGISTER_ROUTE)
+    object Register : FirstFeatureScreens(REGISTER_ROUTE)
 
     companion object {
         const val FIRST_FEATURE_ROUTE = "FIRST_FEATURE_ROUTE"

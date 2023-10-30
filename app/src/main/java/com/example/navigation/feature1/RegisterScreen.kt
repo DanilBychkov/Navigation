@@ -1,4 +1,4 @@
-package com.example.navigation.feature2
+package com.example.navigation.feature1
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Button

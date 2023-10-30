@@ -8,7 +8,8 @@ import androidx.compose.runtime.Composable
 @Composable
 fun HomeScreen(
     navigateToMenuButtonClick: () -> Unit,
-    navigateToRegisterButtonClick: () -> Unit
+    navigateToRegisterButtonClick: () -> Unit,
+    navigateToHomeButtonClick: () -> Unit
 ) {
     Column {
         Text("Hello from Home feature")
@@ -17,6 +18,9 @@ fun HomeScreen(
         }
         Button(onClick = { navigateToRegisterButtonClick.invoke() }) {
             Text(text = "Navigate to Register feature")
+        }
+        Button(onClick = { navigateToHomeButtonClick.invoke() }) {
+            Text(text = "Navigate to This feature")
         }
     }
 }
