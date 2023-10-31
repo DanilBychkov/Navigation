@@ -50,16 +50,24 @@ fun NavigationLogger(navHostController: NavHostController, loggerHeight: Dp) {
 
     LaunchedEffect(Unit) {
         val routes = StringBuilder()
+        val arguments = StringBuilder()
         navHostController.currentBackStack.collect { backStackEntry ->
             routes.clear()
+            arguments.clear()
+
             routes.append("Routes: ")
+            arguments.append("Arguments: ")
+
             backStackEntry.forEach { entry ->
                 entry.destination.route?.let { route ->
                     routes.append(route)
                     routes.append("; ")
                 }
+
+                arguments.append(entry.destination.arguments)
+                arguments.append("; ")
             }
-            backStackRoutes.value = routes.toString()
+            backStackRoutes.value = routes.toString() + "\n" + arguments.toString()
         }
     }
 
