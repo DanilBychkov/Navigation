@@ -29,7 +29,7 @@ fun NavGraphBuilder.registerSecondFeature(navController: NavHostController) {
             val id = backStackEntry.arguments
                 ?.getInt(SecondFeatureScreens.ID_KEY) ?: -1
             IdScreen(id) {
-                navController.popBackStack()
+                navController.navigateUp()
             }
         }
         composable(route = SecondFeatureScreens.Courses.route) {

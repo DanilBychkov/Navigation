@@ -25,11 +25,13 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.navigation.feature1.navigation.registerFirstFeature
 import com.example.navigation.feature2.navigation.registerSecondFeature
-import com.example.navigation.feature3.navigation.registerThirdFeature
 import com.example.navigation.navigation.NavigationLogger
 import com.example.navigation.navigation.navigatePopUpTo
 import com.example.navigation.ui.theme.NavigationTheme
 
+/**
+ * TODO Добавить свой NavType!!!
+ */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,7 +72,6 @@ private fun MainScreen(navHostController: NavHostController) {
             ) {
                 registerFirstFeature(navHostController)
                 registerSecondFeature(navHostController)
-                registerThirdFeature(navHostController)
             }
         }
     }

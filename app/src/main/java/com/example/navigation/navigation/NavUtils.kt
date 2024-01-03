@@ -15,6 +15,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
+import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 
@@ -51,7 +52,10 @@ fun NavigationLogger(navHostController: NavHostController, loggerHeight: Dp) {
     LaunchedEffect(Unit) {
         val routes = StringBuilder()
         val arguments = StringBuilder()
+
         navHostController.currentBackStack.collect { backStackEntry ->
+            Log.d("NavigationLogger", navHostController.graph.hierarchy.toList().toString())
+
             routes.clear()
             arguments.clear()
 
